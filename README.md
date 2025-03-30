@@ -1,2 +1,5 @@
 # ft_irc
-Back to the future of communicating on the Internet
+
+125/125
+
+Done with my partner in crime, /mrlouf
