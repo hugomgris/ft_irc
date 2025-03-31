@@ -6,7 +6,7 @@
 /*   By: hmunoz-g <hmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:38:32 by hmunoz-g          #+#    #+#             */
-/*   Updated: 2025/03/25 17:43:04 by hmunoz-g         ###   ########.fr       */
+/*   Updated: 2025/03/31 10:15:43 by hmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,6 @@ void KickCommand::executeCommand(int client_fd, const ParsedMessage &parsedMsg) 
         std::string errorMsg = ":server 401 " + operator_client->getNickname() + " " + targetNick + " :No such nick\r\n";
         send(client_fd, errorMsg.c_str(), errorMsg.length(), 0);
         return;
-    }
-
-    //! delete before submission
-    std::cout << "Debug - Checking if " << targetNick << " is member of " << channelName << std::endl;
-    std::cout << "Channel members:" << std::endl;
-    for (size_t i = 0; i < channel->getMembers().size(); i++) {
-        std::cout << " - " << channel->getMembers()[i]->getNickname() << std::endl;
-    }
-    std::cout << "Channel operators:" << std::endl;
-    for (size_t i = 0; i < channel->getOperators().size(); i++) {
-        std::cout << " - " << channel->getOperators()[i]->getNickname() << std::endl;
     }
 
     if (!channel->isMember(targetClient)) {

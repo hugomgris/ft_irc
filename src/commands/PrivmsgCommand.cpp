@@ -6,7 +6,7 @@
 /*   By: hmunoz-g <hmunoz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 11:24:24 by hmunoz-g          #+#    #+#             */
-/*   Updated: 2025/03/27 11:27:28 by hmunoz-g         ###   ########.fr       */
+/*   Updated: 2025/03/31 10:15:53 by hmunoz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void PrivmsgCommand::sendMessageToUser(const std::string& message, RegisteredCli
 
 // Helper method to broadcast the message to all channel members
 void PrivmsgCommand::broadcastMessage(const std::string& message, Channel* channel, RegisteredClient* sender) {
-    std::cout << "cucuf333333333\n";
 	std::string formattedMessage = ":" + sender->getNickname() + " PRIVMSG " + channel->getName() + " :" + message + "\r\n";
     // Send the message to all channel members except the sender
     std::vector<RegisteredClient*>::const_iterator it;
